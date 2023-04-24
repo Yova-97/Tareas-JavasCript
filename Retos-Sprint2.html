@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retos - Sprint 2</title>
+</head>
+<body>
+   <script>
+    // Definimos un objeto que relaciona cada día de la semana con su número correspondiente
+const diasDeLaSemana = {
+  "lunes": 1,
+  "martes": 2,
+  "miércoles": 3,
+  "jueves": 4,
+  "viernes": 5,
+  "sábado": 6,
+  "domingo": 7
+};
+
+// Obtenemos la información del usuario
+const dia = prompt("Ingresa el día de la semana (en minúsculas):");
+const montoConsumido = Number(prompt("Ingresa el monto consumido:"));
+
+// Calculamos el descuento correspondiente
+let descuento = 0;
+
+if (montoConsumido > 150) {
+  if (diasDeLaSemana[dia] === 6 || diasDeLaSemana[dia] === 7) {
+    descuento = 0.1;
+  } else {
+    descuento = 0.05;
+  }
+}
+
+// Mostramos el resultado
+if (descuento === 0) {
+  document.write("<h3>No tiene descuento</h3>");
+} else {
+  document.write(`<h3>El porcentaje de descuento a aplicar es </h3> ${descuento * 100}%`);
+}
+
+   </script> 
+</body>
+</html>
