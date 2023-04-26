@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Comparación de áreas de rectángulos</title>
+</head>
+<body>
+  <h1>Comparación de áreas de rectángulos</h1>
+
+  <script>
+    const rectangulo1 = {
+      ancho: 6,
+      alto: 10
+    };
+
+    const rectangulo2 = {
+      ancho: 10,
+      alto: 5
+    };
+
+    const area1 = rectangulo1.ancho * rectangulo1.alto;
+    const area2 = rectangulo2.ancho * rectangulo2.alto;
+
+    if (area1 === area2) {
+      document.write("<p>Los rectángulos tienen la misma área.</p>");
+    } else {
+      document.write("<p>Los rectángulos no tienen la misma área.</p>");
+    }
+  </script>
+</body>
+</html>
+
