@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        let estatura, suma = 0, contador = 0;
+let quiereIngresarMasEstaturas = true;
+
+do {
+  estatura = prompt("Ingrese la estatura en centímetros (deje en blanco y presione 'Aceptar' si ya no desea ingresar más estaturas):");
+
+  if (estatura !== "") {
+    suma += parseFloat(estatura);
+    contador++;
+  } else {
+    quiereIngresarMasEstaturas = false;
+  }
+} while (quiereIngresarMasEstaturas);
+
+if (contador > 0) {
+  const promedio = suma / contador;
+  document.write(`<h1> El promedio de las estaturas ingresadas es de ${promedio.toFixed(2)} centímetros.</h1>`);
+} else {
+  document.write("<h1> No se ingresaron estaturas. </h1>");
+}
+
+    </script>
+</body>
+</html>
