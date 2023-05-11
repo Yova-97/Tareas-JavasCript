@@ -14,4 +14,4 @@ function CalcularIva(monto){
    }
    const nombre = "Luis";
    const mensaje = saludar(nombre);
-   console.log(mensaje);
+   console.log(mensaje); //devuelve "Hola Luis, bienvenid@"
