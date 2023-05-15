@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animales en un Zoológico</title>
+</head>
+<body>
+    <div id="datos"></div>
+    <script>
+        function Animales (nombre, nombreCientifico, bioma){
+            this.nombre = nombre;
+            this.nombreCientifico = nombreCientifico;
+            this.bioma = bioma;
+        }
+        let animal1 = new Animales("León","Panthera leo","Sabanas, Praderas y bosques abiertos");
+        let animal2 = new Animales("Elefante", "Loxodonta africana", "Sabanas, praderas y zonas arboladas");
+
+        let AnimalesZoo = [animal1, animal2];
+
+        let datosElemento = document.getElementById("datos");
+        for (let i = 0; i < AnimalesZoo.length; i++) {
+        let animal = AnimalesZoo[i];
+        let nuevoParrafo = document.createElement("p");
+        nuevoParrafo.textContent = `El animal ${animal.nombre} con el nombre científico ${animal.nombreCientifico} habita en biomas de ${animal.bioma}`;
+        datosElemento.appendChild(nuevoParrafo);
+      }
+
+
+    </script>
+</body>
+</html>

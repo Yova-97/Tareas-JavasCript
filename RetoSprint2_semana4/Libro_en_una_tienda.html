@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ejemplo de imprimir objetos en HTML</title>
+  </head>
+  <body>
+    <div id="datos"></div>
+
+    <script>
+      // Definir una función constructora para crear objetos libro
+      function Libro(titulo, autor, anioPublicacion) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.anioPublicacion = anioPublicacion;
+      }
+
+      // Crear algunos objetos libro utilizando la función constructora
+      let libro1 = new Libro("La insoportable levedad del ser", "Milan Kundera", 1984);
+      let libro2 = new Libro("El amor en los tiempos del cólera", "Gabriel García Márquez", 1985);
+      let libro3 = new Libro("El Aleph", "Jorge Luis Borges", 1949);
+
+      // Crear un arreglo de objetos libro
+      let libros = [libro1, libro2, libro3];
+
+      // Imprimir todas las propiedades de los objetos en un elemento HTML
+      let datosElemento = document.getElementById("datos");
+
+      for (let i = 0; i < libros.length; i++) {
+        let libro = libros[i];
+        let nuevoParrafo = document.createElement("p");
+        nuevoParrafo.textContent = `El libro ${libro.titulo} de ${libro.autor} fue publicado en ${libro.anioPublicacion}`;
+        datosElemento.appendChild(nuevoParrafo);
+      }
+    </script>
+  </body>
+</html>
