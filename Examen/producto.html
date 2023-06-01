@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producto</title>
+    <style>
+        #Total {
+            color: brown;
+        }
+        form {
+            display: grid;
+            gap: 10px;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="Precio">Precio: </label>
+        <input type="number" id="Precio" step="1" required><br><br>
+
+        <label for="nombre">Nombre del Producto: </label>
+        <input type="text" id="nombre" required><br><br>
+
+        <label for="unidades">Cantidad de Unidades: </label>
+        <input type="number" id="unidades" step="1" required><br><br>
+
+        <input type="button" value="Calcular" onclick="precioTotal()"><br><br>
+
+        <div id="Total"></div>
+    </form>
+
+    <script>
+        function precioTotal() {
+            var Precio = parseFloat(document.getElementById("Precio").value);
+            var unidades = parseFloat(document.getElementById("unidades").value);
+
+            if (isNaN(Precio) || isNaN(unidades)) {
+                alert("Ingrese el valor requerido.");
+                return;
+            }
+
+            var Total = Precio * unidades;
+
+            document.getElementById("Total").innerHTML = "<h2>El precio total es de: </h2>" + Total.toFixed(2);
+        }
+    </script>
+</body>
+</html>
